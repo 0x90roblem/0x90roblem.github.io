@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on 0x90roblem</title>
+    <link>https://0x90roblem.github.io/pages/</link>
+    <description>Recent content in Pages on 0x90roblem</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language><atom:link href="https://0x90roblem.github.io/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About me</title>
+      <link>https://0x90roblem.github.io/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://0x90roblem.github.io/pages/about/</guid>
+      
+      <description>Hi everyone 👋
+I am Paolo, Cybercsecurity Enthusiast
+😄 Pronouns: He/Him
+📍 Milan, Italy
+🔭 I’m currently working as Defensive cybersecurity specialist for Horizon Consulting. Help client to defense their perimeter to attacker.
+🌱 I’m currently learning Web security and Malware Analysis
+Leanguages 🇮🇹 🇺🇸: Italian (Native speaker), English (Fluent)
+📫 How to reach me: paolo.filippini99@gmail.com
+Interests
+Web Security 🌍: I am trying to improve my skills in this area, reading articles,books and watch videos and open burp at least once a day 😄 Volunteering: I am currently volunteering in CNGEI Milan (Scouts).</description>
+      
+    </item>
+    
+  </channel>
+</rss>
