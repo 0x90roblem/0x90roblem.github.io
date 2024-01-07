@@ -1,12 +1,13 @@
-<!DOCTYPE html><html lang="en-gb" class="dark"><head><meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en-gb"><head><meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">0x90roblem | 0x90roblem</title>
-<meta property="og:title" content="0x90roblem | 0x90roblem" />
-<meta name="twitter:title" content="0x90roblem | 0x90roblem" />
-<meta itemprop="name" content="0x90roblem | 0x90roblem" />
-<meta name="application-name" content="0x90roblem | 0x90roblem" />
+<title itemprop="name">Badstore - VulnHub Solution | 0x90roblem</title>
+<meta property="og:title" content="Badstore - VulnHub Solution | 0x90roblem" />
+<meta name="twitter:title" content="Badstore - VulnHub Solution | 0x90roblem" />
+<meta itemprop="name" content="Badstore - VulnHub Solution | 0x90roblem" />
+<meta name="application-name" content="Badstore - VulnHub Solution | 0x90roblem" />
 <meta property="og:site_name" content="0x90roblem blog" />
 
 <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique justo a tellus venenatis, ut tristique purus venenatis. Fusce vehicula auctor augue, vel eleifend urna tincidunt vel. Suspendisse potenti. Proin auctor, elit vel fermentum convallis, odio turpis feugiat odio, vitae commodo odio orci nec elit. Phasellus bibendum, justo eu semper tincidunt, nisl ligula hendrerit neque, at posuere justo est nec nunc. In hac habitasse platea dictumst. Sed sit amet efficitur orci. Integer at dolor sit amet justo tristique euismod. Vestibulum vestibulum ex nec augue iaculis, sit amet convallis felis malesuada. Nullam tristique quam at neque fermentum, sit amet laoreet tortor bibendum. Curabitur elementum pharetra felis, eu dictum nisi tincidunt sit amet. Mauris quis libero vel purus cursus scelerisque ac ac libero.">
@@ -27,14 +28,50 @@
 
 
 
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-01-06T12:30:00&#43;0600 />
+    <meta property="article:published_time" content=2024-01-06T12:30:00&#43;0600 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Badstore - VulnHub Solution",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-01-06",
+        "description": "",
+        "wordCount":  253 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-01-06",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "0x90roblem"
+        }
+    }
+    </script>
+
 
 <meta name="generator" content="Hugo 0.121.1">
 
     
 
-    <link rel="canonical" href="https://0x90roblem.github.io/">
-    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="0x90roblem">
-    <link href="/index.xml" rel="feed" type="application/rss+xml" title="0x90roblem">
+    <link rel="canonical" href="https://0x90roblem.github.io/posts/badstore/">
     <link href="/style.min.4779f6bc124e77c9704eef8c3521ccc8ff06532fc4ce290c5882bbcf18175916.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -59,7 +96,7 @@
 
     
     </head>
-<body data-theme="dark" class="notransition">
+<body data-theme = "dark" class="notransition">
 
 <script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
 
@@ -114,43 +151,50 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper">
-        
 
-
-<div class="author">
-    
-    
-    <img class="author-avatar" src="/me_hu0c3be3609e33733b7100aa8068c033be_48049_100x100_fill_q75_h2_box_smart1.webp" alt="Paolo Filippini" width="800"
-        height="800" />
-    
-    <h2 class="author-name">0x90roblem blog</h2>
-    <p class="author-bio">Passionate about cybersecurity since always, throughout the years I&#39;ve sought to seize every opportunity in this field. Thanks to university projects, participation in CTF groups, CyberChallenge and work experiences, I have acquired various offensive cybersecurity skills. Eagerly seeking new things to learn and break.</p>
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Badstore - VulnHub Solution</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-01-06T12:30:00&#43;06:00" itemprop="datePublished"> 6 Jan 2024 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>New year, new challenge
+I decided to try VulnHub, it is different from the classic CTF i use to.
+Where to start?
+Easy at the beginning, I navigated to the timeline page, scrolled all the way down, found the first released machine, Badstore: 1.2.3, downloaded it, installed it, and let’s get started.
+Open the other VM with Kali and launch a scan with Nmap (classic), below the command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">sudo nmap -sC -sV -oA badstore/nmap_result 192.168.1.66
+</span></span></span></code></pre></div><p>This was the output:</p>
+<figure>
+  <img src="/assets/nmap_result.png" alt="" style="width:100%">
+  <figcaption>Nmap output</figcaption>
+</figure>
+<p>The machine expose a web server, this is first page:</p>
+<figure>
+  <img src="/assets/first_page.png" alt="" style="width:100%">
+  <figcaption>First page</figcaption>
+</figure>
+<p>I added the badstore.net domain in the /etc/hosts file, in this way i was able to navigate using the hostname instead of IP address.</p>
+<p>This is where frustration began. After opening Burp and adding “badstore.net” to the scope, I didn&rsquo;t know what to search for and where to find it.
+I examined all of the web requests, but nothing came up. I knew it had to be something simple, because the machine was considered easy.
+The next day, i re-examined the Nmap scan. I had an idea: maybe the vulnerability is an SQL injection since the machine exposes My-SQL service.
+Send the login request to the Repeater tab in Burp. Try different payloads, but nothing again. After more than I want to admit attempts i found a valid payload:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">admin&#39;  or &#39;x&#39;=x&#39;
+</span></span></span></code></pre></div><p>I logged in as ‘Master System Administrator’ and challenge completed.</p>
+<p>It took longer than I expected, but it turned out to be quite enjoyable in the end.</p>
+<center>0x90roblem</center>
+            </div>
+        </article></main>
 </div>
-
-        <main aria-label="Content">
-            <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
-            
-            
-            
-            
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/badstore/">Badstore - VulnHub Solution</a>
-    </h4>
-    
-    
-    
-    <time class="post-item-meta" datetime="2024-01-06T12:30:00&#43;0600">
-        6 Jan 2024
-        
-    </time>
-</article>
-
-            
-            
-        </main>
-    </div><footer class="footer">
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
@@ -199,5 +243,4 @@ stroke-linejoin="round" class="feather feather-home">
     
 
 </body>
-
 </html>
