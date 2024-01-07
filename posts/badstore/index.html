@@ -52,7 +52,7 @@
         },
         "datePublished": "2024-01-06",
         "description": "",
-        "wordCount":  253 ,
+        "wordCount":  470 ,
         "mainEntityOfPage": "True",
         "dateModified": "2024-01-06",
         "image": {
@@ -173,16 +173,59 @@ Easy at the beginning, I navigated to the timeline page, scrolled all the way do
 Open the other VM with Kali and launch a scan with Nmap (classic), below the command:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">sudo nmap -sC -sV -oA badstore/nmap_result 192.168.1.66
 </span></span></span></code></pre></div><p>This was the output:</p>
-<figure>
-  <img src="nmap_result.png" alt="" style="width:100%">
-  <figcaption>Nmap output</figcaption>
-</figure>
-<p>The machine expose a web server, this is first page:</p>
-<figure>
-  <img src="first_page.png" alt="" style="width:100%">
-  <figcaption>First page</figcaption>
-</figure>
-<p>I added the badstore.net domain in the /etc/hosts file, in this way i was able to navigate using the hostname instead of IP address.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">sudo nmap -sC -sV -oA ./nmap_result 192.168.1.66
+</span></span></span><span class="line"><span class="cl"><span class="go">[sudo] password for kali: 
+</span></span></span><span class="line"><span class="cl"><span class="go">Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-01-07 12:12 EST
+</span></span></span><span class="line"><span class="cl"><span class="go">Nmap scan report for badstore.net (192.168.1.66)
+</span></span></span><span class="line"><span class="cl"><span class="go">Host is up (0.0011s latency).
+</span></span></span><span class="line"><span class="cl"><span class="go">Not shown: 997 filtered tcp ports (no-response)
+</span></span></span><span class="line"><span class="cl"><span class="go">PORT     STATE SERVICE  VERSION
+</span></span></span><span class="line"><span class="cl"><span class="go">80/tcp   open  http     Apache httpd 1.3.28 ((Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c)
+</span></span></span><span class="line"><span class="cl"><span class="go">|_http-server-header: Apache/1.3.28 (Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c
+</span></span></span><span class="line"><span class="cl"><span class="go">| http-robots.txt: 5 disallowed entries 
+</span></span></span><span class="line"><span class="cl"><span class="go">|_/cgi-bin /scanbot /backup /supplier /upload
+</span></span></span><span class="line"><span class="cl"><span class="go">| http-methods: 
+</span></span></span><span class="line"><span class="cl"><span class="go">|_  Potentially risky methods: TRACE
+</span></span></span><span class="line"><span class="cl"><span class="go">|_http-title: Welcome to BadStore.net v1.2.3s
+</span></span></span><span class="line"><span class="cl"><span class="go">443/tcp  open  ssl/http Apache httpd 1.3.28 ((Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c)
+</span></span></span><span class="line"><span class="cl"><span class="go">|_http-title: Welcome to BadStore.net v1.2.3s
+</span></span></span><span class="line"><span class="cl"><span class="go">|_http-server-header: Apache/1.3.28 (Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c
+</span></span></span><span class="line"><span class="cl"><span class="go">| http-methods: 
+</span></span></span><span class="line"><span class="cl"><span class="go">|_  Potentially risky methods: TRACE
+</span></span></span><span class="line"><span class="cl"><span class="go">| ssl-cert: Subject: commonName=www.badstore.net/organizationName=BadStore.net/stateOrProvinceName=Illinois/countryName=US
+</span></span></span><span class="line"><span class="cl"><span class="go">| Subject Alternative Name: email:root@badstore.net
+</span></span></span><span class="line"><span class="cl"><span class="go">| Not valid before: 2006-05-10T12:52:53
+</span></span></span><span class="line"><span class="cl"><span class="go">|_Not valid after:  2009-02-02T12:52:53
+</span></span></span><span class="line"><span class="cl"><span class="go">| sslv2: 
+</span></span></span><span class="line"><span class="cl"><span class="go">|   SSLv2 supported
+</span></span></span><span class="line"><span class="cl"><span class="go">|   ciphers: 
+</span></span></span><span class="line"><span class="cl"><span class="go">|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+</span></span></span><span class="line"><span class="cl"><span class="go">|     SSL2_DES_64_CBC_WITH_MD5
+</span></span></span><span class="line"><span class="cl"><span class="go">|     SSL2_RC4_128_EXPORT40_WITH_MD5
+</span></span></span><span class="line"><span class="cl"><span class="go">|     SSL2_RC4_128_WITH_MD5
+</span></span></span><span class="line"><span class="cl"><span class="go">|     SSL2_IDEA_128_CBC_WITH_MD5
+</span></span></span><span class="line"><span class="cl"><span class="go">|     SSL2_RC4_64_WITH_MD5
+</span></span></span><span class="line"><span class="cl"><span class="go">|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+</span></span></span><span class="line"><span class="cl"><span class="go">|_    SSL2_RC2_128_CBC_WITH_MD5
+</span></span></span><span class="line"><span class="cl"><span class="go">| http-robots.txt: 5 disallowed entries 
+</span></span></span><span class="line"><span class="cl"><span class="go">|_/cgi-bin /scanbot /backup /supplier /upload
+</span></span></span><span class="line"><span class="cl"><span class="go">|_ssl-date: 2024-01-07T12:26:54+00:00; -4h45m30s from scanner time.
+</span></span></span><span class="line"><span class="cl"><span class="go">3306/tcp open  mysql    MySQL 4.1.7-standard
+</span></span></span><span class="line"><span class="cl"><span class="go">| mysql-info: 
+</span></span></span><span class="line"><span class="cl"><span class="go">|   Protocol: 10
+</span></span></span><span class="line"><span class="cl"><span class="go">|   Version: 4.1.7-standard
+</span></span></span><span class="line"><span class="cl"><span class="go">|   Thread ID: 52
+</span></span></span><span class="line"><span class="cl"><span class="go">|   Capabilities flags: 33324
+</span></span></span><span class="line"><span class="cl"><span class="go">|   Some Capabilities: Support41Auth, Speaks41ProtocolNew, SupportsCompression, ConnectWithDatabase, LongColumnFlag
+</span></span></span><span class="line"><span class="cl"><span class="go">|   Status: Autocommit
+</span></span></span><span class="line"><span class="cl"><span class="go">|_  Salt: 7GBSZJBOEM3W;`TdwJKy
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">Host script results:
+</span></span></span><span class="line"><span class="cl"><span class="go">|_clock-skew: -4h45m30s
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span></span><span class="line"><span class="cl"><span class="go">Nmap done: 1 IP address (1 host up) scanned in 23.42 seconds
+</span></span></span></code></pre></div><p>The machine expose a web server, I added the badstore.net domain in the /etc/hosts file, in this way i was able to navigate using the hostname instead of IP address.</p>
 <p>This is where frustration began. After opening Burp and adding “badstore.net” to the scope, I didn&rsquo;t know what to search for and where to find it.
 I examined all of the web requests, but nothing came up. I knew it had to be something simple, because the machine was considered easy.
 The next day, i re-examined the Nmap scan. I had an idea: maybe the vulnerability is an SQL injection since the machine exposes My-SQL service.
